@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <title>B24 - Passbook</title>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  </head>
+<!-- Получить Карту -->
+<body>
+  <div class="wrapper">
+    <div class="get-card__inner">
+<div class="get-card__logo--moved">
+  <img src="./img/images/rems.png" alt="Rems_logo" width="150">
+</div>
+<div class="get-card__content">
+  <div class="get-card__header px-5 pt-5 mb-5">
+    <h3 class="get-card__title mb-0">
+      Заполните форму для получения карты лояльности
+    </h3>
+  </div>
+  <div class="get-card__body mb-5">
+    <form>
+      <!-- First Name -->
+      <div class="form-group mb-4">
+        <input
+          type="text"
+          class="form-control get-card__input w-100"
+          placeholder="Имя"
+          required
+        >
+      </div>
+      <!-- Second Name -->
+      <div class="form-group mb-4">
+        <input
+          type="text"
+          class="form-control get-card__input w-100"
+          placeholder="Фамилия"
+          required
+        >
+      </div>
+      <!-- Gender -->
+      <div class="form-group mb-4 get-card__select-wrap">
+        <select class="form-control get-card__input get-card__select" placeholder="Пол">
+          <option disabled selected hidden>Пол</option>
+          <option value="man">мужской</option>
+          <option value="woman">женский</option>
+        </select>
+      </div>
+      <!-- Birth Day -->
+      <div class="form-group mb-4 pos-relative">
+        <input
+          type="date"
+          class="form-control get-card__input born__input w-100"
+          required
+          min="1920-01-01"
+          max="2040-01-01"
+        >
+        <span class="born__placeholder">Дата рождения</span>
+      </div>
+      <!-- Email -->
+      <div class="form-group mb-5">
+        <input
+          type="email"
+          class="form-control get-card__input w-100"
+          placeholder="E-mail"
+          required
+        >
+      </div>
+      <!-- Get Card Button -->
+      <div class="form-group mb-4">
+        <a href="#" class="auth__btn w-100 mb-0">Получить карту</a>
+      </div>
+      <!-- Agreement -->
+      <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" id="customCheck1">
+        <label class="custom-control-label agreement-text get-card__checkbox" for="customCheck1">
+          Я принимаю
+          <a href="#">условия</a>
+          программы лояльности и передачи информации
+        </label>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+  const bornInput = document.querySelector('.born__input');
+
+  bornInput.addEventListener('change', function(event) {
+    if(event.target.value) {
+      this.classList.add('dirty');
+    } else {
+      this.classList.remove('dirty');
+    }
+  })
+</script>
+</div>
+  </div>
+</body>
+</html>
